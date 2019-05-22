@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>магазин</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="wrap_products">
+		<div class="products">
+			<div class="cards_product">
+				<div class="product_img"><img src="img/1.jpg" alt="" id=1></div>
+				<div class="product_name"></div>
+				<p uk-margin>
+        <button class="uk-button uk-button-danger bay" for=1>в корзину</button>
+                    </p>
+
+
+			</div>
+			<div class="cards_product">
+				<div class="product_img"><img src="img/1_125.jpg" alt="" id=2></div>
+				<div class="product_name"></div>
+				<p uk-margin>
+        <button class="uk-button uk-button-danger bay" for=2>в корзину</button>
+                    </p>
+			</div>
+			<div class="cards_product">
+				<div class="product_img"><img src="img/3_125.jpg" alt="" for='2'></div>
+				<div class="product_name"></div>
+				<p uk-margin>
+        <button class="uk-button uk-button-danger bay">в корзину</button>
+                    </p>
+			</div>
+			<div class="cards_product">
+				<div class="product_img"><img src="img/4_125.jpg" alt="" id=3></div>
+				<div class="product_name"></div>
+				<p uk-margin>
+        <button class="uk-button uk-button-danger bay" for=3>в корзину</button>
+                    </p>
+			</div>
+			<div class="cards_product">
+				<div class="product_img"><img src="img/6_125.jpg" alt=""></div>
+				<div class="product_name"></div>
+				<p uk-margin>
+        <button class="uk-button uk-button-danger bay">в корзину</button>
+                    </p>
+			</div>
+			<div class="cards_product">
+				<div class="product_img"><img src="img/8_125.jpg" alt=""></div>
+				<div class="product_name"></div>
+				<p uk-margin>
+        <button class="uk-button uk-button-danger bay">в корзину</button>
+                    </p>
+			</div>
+			
+			<div class="card">КОРЗИНА
+                   <!-- <img src="img/block_7.jpg" alt="">-->
+                    <!-- This is a button toggling the modal -->
+<button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example"><img src="img/block_7.jpg" alt=""></button>
+
+<!-- This is an anchor toggling the modal -->
+
+
+<!-- This is the modal -->
+<div id="modal-example" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Headline</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button">Save</button>
+        </p>
+    </div>
+</div>
+</div>
+
+
+			</div>
+		</div>
+</div>
+<script>
+	$(document).ready(function(){
+
+		$(".bay").on("click",function(){
+        var id = $(this).attr("for");
+            console.log(id);
+        $('[id = '+ id +']')
+            .clone()
+            .css({'position' : 'absolute', 'z-index' : '11100', top: $(this).offset().top-300, left:$(this).offset().left-100})
+            .appendTo("body")
+            .animate({opacity: 0.05,
+                left: $(".card").offset()['left'],
+                top: $(".card").offset()['top'],
+                width: 20}, 1000, function() {
+                $(this).remove();
+            });
+ 
+    });
+		
+	});//end ready
+</script>
+</body>
+</html>
